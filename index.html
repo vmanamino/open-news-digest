@@ -1,13 +1,22 @@
 <!doctype html>
-<html lang="en" ng-app='OPNApp'>
+<html lang="en" ng-app='ONDApp'>
 <head>
     <meta charset="UTF-8">
     <title>Open News Digest</title>
+    <link rel="stylesheet" href="./app/css/main.css" type="text/css" />
 </head>
 <body>
-    <h1>Hello</h1>
-    <div ng-view></div>
-    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
-    <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+    <h1>Open News Digest</h1>
+    <div ng-view>
+        <!--<calendar-display>-->
+    
+        <!--</calendar-display>-->
+    </div>
+    <script type="text/javascript" src="./app/bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="./app/bower_components/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="./app/app-module.js"></script>
+    <script type="text/javascript" src="./app/app-routes.js"></script>
+    <script type="text/javascript" src="./app/home/home.js"></script>
+    <script type="text/javascript" src="./app/home/calendar/calendarRange.js"></script>
 </body>
 </html>
