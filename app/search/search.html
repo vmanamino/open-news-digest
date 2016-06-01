@@ -1,10 +1,13 @@
 <calendar-heading>
     
 </calendar-heading>
-<h1>On {{month}} {{day}} {{year}} </h1>
-<p>Find news about</p>
-<div class="search">
-        <form name="myForm" ng-submit="news()">
-            <input id="query" type="text" ng-model="query" name="query"/><input id="submit" type="submit" name="submit" value="+"/>
-        </form>
+<div class='search'>
+    <h1>On {{month}}/{{day}}/{{year}} </h1>
+    <p>Find news about</p>
+    
+    <div class="search">
+            <form name="myForm" ng-submit="news()">
+                <input id="query" type="text" ng-model="query" name="query"/><input id="submit" type="submit" name="submit" value="+"/>
+            </form>
+    </div>
 </div>

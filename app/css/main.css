@@ -1,5 +1,9 @@
 /* your css code goes here */
 
+.title, .form-inline, .calendar-heading, .search {
+    text-align: center;
+}
+
 .weekdays {
     margin: 0;
     padding: 10px 0;
