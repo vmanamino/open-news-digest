@@ -36,5 +36,5 @@
 </ul>
 
 <ul class="days">
-    <li class="day {{ day.monthClass }}" ng-repeat="day in dates.days">{{day.day}}</li>    
+    <li class="day {{ day.monthClass }}" ng-click="toSearch(day)" ng-repeat="day in dates.days">{{day.day}}</li>    
 </ul> 

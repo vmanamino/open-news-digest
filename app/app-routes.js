@@ -4,6 +4,11 @@ angular.module('ONDApp')
         $locationProvider.hashPrefix('!');
         $routeProvider.
         when("/", {
-            templateUrl: 'app/home/home.html'
+            templateUrl: 'app/home/home.html',
+            controller: 'HomeCtrl'
+        })
+        .when("/search/:day", {
+            templateUrl: 'app/search/search.html',
+            controller: 'SearchCtrl'
         });
     }]);

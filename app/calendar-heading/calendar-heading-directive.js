@@ -1,0 +1,14 @@
+angular.module('ONDApp')
+    .directive('calendarHeading', function(){
+        return {
+            restrict: 'E',
+            // template: "<h1>Search</h1>"
+            templateUrl: 'app/calendar-heading/calendar-heading-partial.html',
+            scope: true,
+            controller: function($scope, $element, $location){
+                $scope.toCalendar = function(){
+                    $location.path("/");
+                };
+            }
+        };
+    })

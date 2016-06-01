@@ -1,1 +1,1 @@
-angular.module('ONDApp', ['ngRoute']);
+angular.module('ONDApp', ['library', 'ngRoute']);

@@ -32,3 +32,11 @@ angular.module('ONDApp')
             }
         };
     })
+    .controller('HomeCtrl', ['$scope', '$location', '$routeParams', 'dateParams',
+    function($scope, $location, $routeParams, dateParams){
+        $scope.toSearch = function(day){
+            console.log(day);
+            $location.path('/search/'+day.day+''+day.month+''+day.year); 
+            dateParams(day);
+        };
+    }]);
