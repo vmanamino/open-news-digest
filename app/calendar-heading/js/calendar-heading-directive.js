@@ -3,7 +3,7 @@ angular.module('ONDApp')
         return {
             restrict: 'E',
             // template: "<h1>Search</h1>"
-            templateUrl: 'app/calendar-heading/calendar-heading-partial.html',
+            templateUrl: 'app/calendar-heading/templates/calendar-heading-partial.html',
             scope: true,
             controller: function($scope, $element, $location){
                 $scope.toCalendar = function(){

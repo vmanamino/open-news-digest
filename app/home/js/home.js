@@ -2,7 +2,7 @@ angular.module('ONDApp')
     .directive('calendarDisplay', function(){
         return {
             restrict: 'E',
-            templateUrl: 'app/home/table.html',
+            templateUrl: 'app/home/templates/table.html',
             scope: true,
             transclude: true,
             controller: function($scope, $element){
