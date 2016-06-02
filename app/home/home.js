@@ -10,6 +10,10 @@ angular.module('ONDApp')
                 $scope.currentMonth = date.getMonth();
                 $scope.currentYear = date.getFullYear();
                 $scope.dates;
+                $scope.currentMonth = date.getMonth();
+                $scope.currentYear = date.getFullYear();
+                $scope.initMonth = $scope.currentMonth.toString();
+                $scope.initYear = $scope.currentYear.toString();
                 
                 $scope.reset = function(){
                     console.log('reset called');
