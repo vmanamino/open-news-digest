@@ -44,3 +44,22 @@
 .day.previous-or-next-month {
     background-color: #e4e4e4;
 }
+
+.results {
+    font-size: 28px;
+    width:100%;
+    height:100%;
+    text-align: center;
+}
+
+
+.guardian-results {
+    left: 0;
+    display:inline-block;
+    width:50%;
+}
+
+.nytimes-results {
+    display:inline-block;
+    width:50%;
+}

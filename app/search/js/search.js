@@ -1,22 +1,55 @@
 angular.module('ONDApp')
-    .controller('SearchCtrl', ['$scope', '$location', 'datum', 'guardianArticleFullDisplay',
-    'callNews',
-    function($scope, $location, datum, guardianArticleFullDisplay, callNews){
+    .controller('SearchCtrl', ['$scope', '$location', 'datum', 
+    'guardianArticleFullDisplay', 'nyTimesArticleFullDisplay', '$q',
+    function($scope, $location, datum, guardianArticleFullDisplay, nyTimesArticleFullDisplay, 
+    $q)
+    {
         $scope.day = datum.day;
         var monthNum = datum.month;
         $scope.month = monthNum + 1;
         $scope.year = datum.year;
+        $scope.results;
+        $scope.guardianResults;
         $scope.news = function(){
-            console.log(callNews($scope.query));
+            var guardian = $q.defer();
+            var nytimes = $q.defer();
+            var guardianResponse = guardianArticleFullDisplay($scope.query, $scope.month, $scope.day, $scope.year);
+            var nyTimesResponse = nyTimesArticleFullDisplay($scope.query, $scope.month, $scope.day, $scope.year);
+            guardianResponse.then(function(response){
+                var guardianArticles = response;
+                guardian.resolve(guardianArticles);
+            }),
+            function(response){
+                guardian.reject(response);
+            };
+            nyTimesResponse.then(function(response){
+                var nyTimesArticles = response;
+                nytimes.resolve(nyTimesArticles);
+            }),
+            function(response){
+                nytimes.reject(response);
+            };
+            var all = $q.all([guardian.promise, nytimes.promise]);
+            var guardianNews;
+            var nytimesNews;
+            all.then(function(data){
+                guardianDisplay(data[0]);
+                nytimesDisplay(data[1]);
+            });
+           
+        };
+        
+        guardianDisplay = function(results){
+            $scope.results = results.data.response.results.length;
+            $scope.guardianResults = results.data.response.results;
+            console.log($scope.guardianResults[0].webTitle);
             
         };
-        // $scope.news = function(){
-        //     guardianArticleFullDisplay($scope.query).then(function(response){
-        //         console.log(response);
-        //     }),
-        //     function(response){
-        //         alert('error');
-        //     }
-            
-        // };
+        
+        nytimesDisplay = function(results){
+            $scope.results += results.data.response.docs.length;
+        };
+        
+        
+        
     }]);
