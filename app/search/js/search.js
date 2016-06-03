@@ -8,8 +8,10 @@ angular.module('ONDApp')
         var monthNum = datum.month;
         $scope.month = monthNum + 1;
         $scope.year = datum.year;
+        $scope.term = $scope.query;
         $scope.results;
         $scope.guardianResults;
+        $scope.nytimesResults;
         $scope.news = function(){
             var guardian = $q.defer();
             var nytimes = $q.defer();
@@ -34,6 +36,7 @@ angular.module('ONDApp')
             var nytimesNews;
             all.then(function(data){
                 guardianDisplay(data[0]);
+                console.log(data[1]);
                 nytimesDisplay(data[1]);
             });
            
@@ -48,6 +51,8 @@ angular.module('ONDApp')
         
         nytimesDisplay = function(results){
             $scope.results += results.data.response.docs.length;
+            $scope.nytimesResults = results.data.response.docs;
+            console.log($scope.nytimesResults);
         };
         
         

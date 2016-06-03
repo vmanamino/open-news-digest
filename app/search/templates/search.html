@@ -9,11 +9,11 @@
             <form name="myForm" ng-submit="news()">
                 <input id="query" type="text" ng-model="query" name="query"/><input id="submit" type="submit" name="submit" value="+"/>
             </form>
-            <div class='count' ng-if="results">
+            <div class='count' ng-if="results && (term===query)">
                 <p>Got {{results}} for {{query}}</p>
             </div>
     </div>
 </div>
 <div class="results">
-    <div class="guardian-results"><h1>Guardian</h1><ul><li ng-repeat="result in guardianResults">{{result.webTitle}}</li></ul></div><div class="nytimes-results"><h1>NY Times</h1></div>
+    <div class="guardian-results"><h1>Guardian</h1><ul><li ng-repeat="result in guardianResults">{{result.webTitle}}</li></ul></div><div class="nytimes-results"><h1>NY Times</h1><ul><li ng-repeat="result in nytimesResults">{{result.headline.main}}</li></ul></div>
 </div>
