@@ -1,22 +1,24 @@
 angular.module('ONDApp')
     .controller('SearchCtrl', ['$scope', '$location', 'datum', 
-    'guardianArticleFullDisplay', 'nyTimesArticleFullDisplay', '$q',
-    function($scope, $location, datum, guardianArticleFullDisplay, nyTimesArticleFullDisplay, 
-    $q)
+    'guardianArticlesFullDisplay', 'nyTimesArticlesFullDisplay', 'nytimesArticleDetails',
+    'nytimesArticleMetadata', '$q', '$uibModal',
+    function($scope, $location, datum, guardianArticlesFullDisplay, nyTimesArticlesFullDisplay, 
+    nytimesArticleDetails, nytimesArticleMetadata, $q, $uibModal)
     {
         $scope.day = datum.day;
         var monthNum = datum.month;
         $scope.month = monthNum + 1;
         $scope.year = datum.year;
-        $scope.term = $scope.query;
+        $scope.term;
         $scope.results;
         $scope.guardianResults;
         $scope.nytimesResults;
         $scope.news = function(){
             var guardian = $q.defer();
             var nytimes = $q.defer();
-            var guardianResponse = guardianArticleFullDisplay($scope.query, $scope.month, $scope.day, $scope.year);
-            var nyTimesResponse = nyTimesArticleFullDisplay($scope.query, $scope.month, $scope.day, $scope.year);
+            $scope.term = $scope.query;
+            var guardianResponse = guardianArticlesFullDisplay($scope.query, $scope.month, $scope.day, $scope.year);
+            var nyTimesResponse = nyTimesArticlesFullDisplay($scope.query, $scope.month, $scope.day, $scope.year);
             guardianResponse.then(function(response){
                 var guardianArticles = response;
                 guardian.resolve(guardianArticles);
@@ -55,6 +57,13 @@ angular.module('ONDApp')
             console.log($scope.nytimesResults);
         };
         
+        $scope.guardianArticle = function(result){
+            
+        };
         
-        
+        $scope.nytimesArticle = function(result){
+            nytimesArticleDetails(result); 
+            console.log('metadata');
+            console.log(nytimesArticleMetadata);
+        };
     }]);

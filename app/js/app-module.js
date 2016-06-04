@@ -1,1 +1,1 @@
-angular.module('ONDApp', ['library', 'ngRoute']);
+angular.module('ONDApp', ['library', 'ngRoute', 'ui.bootstrap']);

@@ -45,21 +45,27 @@
     background-color: #e4e4e4;
 }
 
-.results {
-    font-size: 28px;
-    width:100%;
-    height:100%;
-    text-align: center;
-}
+/*.results {*/
+/*    font-size: 28px;*/
+/*    width:100%;*/
+/*    height:100%;*/
+/*    text-align: center;*/
+/*}*/
 
 
 .guardian-results {
-    left: 0;
-    display:inline-block;
-    width:50%;
+    /*left: 0;*/
+    /*display:inline-block;*/
+    /*width:50%;*/
+    float: left;
 }
 
 .nytimes-results {
-    display:inline-block;
-    width:50%;
+    /*display:inline-block;*/
+    /*width:50%;*/
+    float: right;
+}
+
+.clear-both {
+    clear: both;
 }

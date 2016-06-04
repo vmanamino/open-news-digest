@@ -7,11 +7,28 @@ angular.module('library', [])
         };
         return datum;
     })
-    // .service('guardianResultsDisplay', function(){
-    //     var guardianResults = new Array();
-    //     return guardianResults;
-    // })
-    .service('guardianArticleFullDisplay', ['$http', function($http){
+    .service('nytimesArticleMetadata', function(){
+        var article = {
+            byline: '',
+            headline: '', // print headline
+            keywords: [],
+            newsDesk: '',
+            section: '',
+            subsection: '',
+            snippet: ''
+        };
+        return article;
+    })
+    .service('nytimesKeywords', function(){
+        var keys = new Array();
+        return function(keywords){
+            for (var i =  0; i < keywords.length; i++){
+                keys.push(keywords[i].value);
+            }  
+            return keys;    
+        };
+    })
+    .service('guardianArticlesFullDisplay', ['$http', function($http){
         return function(query, month, day, year){
             return $http({
                 method: 'GET',
@@ -23,7 +40,7 @@ angular.module('library', [])
             });    
         };
     }])
-    .service('nyTimesArticleFullDisplay', ['$http', function($http){
+    .service('nyTimesArticlesFullDisplay', ['$http', function($http){
         return function(query, month, day, year){
             day = ("0"+day).slice(-2);
             month = ("0"+month).slice(-2);
@@ -44,40 +61,16 @@ angular.module('library', [])
             datum.day = day.day;
         };
     }])
-    // .factory('results', ['guardianResultsDisplay', function(guardianResultsDisplay){
-    //     return function(result){
-    //         guardianResultsDisplay = result;
-    //     };
-    // }]);
-    // .factory('callNews', ['guardianArticleFullDisplay', 'nyTimesArticleFullDisplay', '$q',
-    // function(guardianArticleFullDisplay, nyTimesArticleFullDisplay, $q){
-    //     return function(query, month, day, year){
-    //         var guardian = $q.defer();
-    //         var nytimes = $q.defer();
-    //         var guardianResponse = guardianArticleFullDisplay(query, month, day, year);
-    //         var nyTimesResponse = nyTimesArticleFullDisplay(query, month, day, year);
-    //         var responded = new Array();
-    //         guardianResponse.then(function(response){
-    //             var guardianArticles = response;
-    //             guardian.resolve(guardianArticles);
-    //         }),
-    //         function(response){
-    //             guardian.reject(response);
-    //         };
-    //         nyTimesResponse.then(function(response){
-    //             var nyTimesArticles = response;
-    //             nytimes.resolve(nyTimesArticles);
-    //         }),
-    //         function(response){
-    //             nytimes.reject(response);
-    //         };
-    //         var all = $q.all([guardian.promise, nytimes.promise]);
-    //         var guardianNews;
-    //         var nytimesNews;
-    //         all.then(function(data){
-    //             responded.push(data[0]);
-    //             responded.push(data[1]);
-    //         });
-    //         return responded;
-    //     };
-    // }]);
+    .factory('nytimesArticleDetails', ['nytimesArticleMetadata', 'nytimesKeywords',
+    function(nytimesArticleMetadata, nytimesKeywords){
+        return function(article){
+            nytimesArticleMetadata.byline = article.byline.original;
+            nytimesArticleMetadata.headline = article.headline.print_headline;
+            nytimesArticleMetadata.keywords = nytimesKeywords(article.keywords);
+            nytimesArticleMetadata.newsDesk = article.news_desk;
+            nytimesArticleMetadata.section = article.section_name;
+            nytimesArticleMetadata.subsection = article.subsection_name;
+            nytimesArticleMetadata.snippet = article.snippet;
+        };    
+    }]);
+    
