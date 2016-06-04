@@ -1,7 +1,7 @@
 angular.module('ONDApp')
     .controller('SearchCtrl', ['$scope', '$location', 'datum', 
-    'guardianArticlesFullDisplay', 'nyTimesArticlesFullDisplay', 'nytimesArticleDetails',
-    'nytimesArticleMetadata', '$q', '$uibModal',
+    'guardianArticlesFullDisplay', 'nyTimesArticlesFullDisplay', 
+    'nytimesArticleDetails', 'nytimesArticleMetadata', '$q', '$uibModal', 
     function($scope, $location, datum, guardianArticlesFullDisplay, nyTimesArticlesFullDisplay, 
     nytimesArticleDetails, nytimesArticleMetadata, $q, $uibModal)
     {
@@ -47,7 +47,8 @@ angular.module('ONDApp')
         guardianDisplay = function(results){
             $scope.results = results.data.response.results.length;
             $scope.guardianResults = results.data.response.results;
-            console.log($scope.guardianResults[0].webTitle);
+            console.log('guardian results');
+            console.log($scope.guardianResults);
             
         };
         
@@ -58,12 +59,18 @@ angular.module('ONDApp')
         };
         
         $scope.guardianArticle = function(result){
-            
+            // guardianArticleDetails(result);
+            // $uibModel.open({
+            //     templateUrl: './app/article-display/templates/guardian-article-display-template.html',
+            //     controller: 'GuardianModalCtrl'
+            // });
         };
         
         $scope.nytimesArticle = function(result){
             nytimesArticleDetails(result); 
-            console.log('metadata');
-            console.log(nytimesArticleMetadata);
+            $uibModal.open({
+                templateUrl: './app/article-display/templates/nytimes-article-display-template.html',
+                controller: 'NYTimesModalCtrl'
+            });
         };
     }]);
