@@ -1,24 +1,29 @@
-<!--<div class="modal-header">-->
-<!--    <h3 class="modal-title">{{title}}</h3>-->
-<!--</div>-->
-<!--<div class="modal-body">-->
-<!--    <div class="snippet">-->
-<!--        {{snippet}}-->
-<!--    </div>  -->
-<!--    <div class="attribution">-->
-<!--        {{attribution}}-->
-<!--    </div>-->
-<!--    <div class="article-link">-->
-<!--        <a ng-href="{{link}}" target="_blank">Go to {{type}}</a>-->
-<!--    </div>-->
-<!--    <div class="keywords">-->
-<!--        <ul>-->
-<!--            <li ng-repeat="term in keywords">-->
-<!--                {{term}}-->
-<!--            </li>-->
-<!--        </ul>-->
-<!--    </div>-->
-<!--</div>-->
-<!--<div class="modal-footer">-->
-<!--    <button class="btn btn-primary" type="button" ng-click="ok()">Email</button>-->
-<!--</div>-->
+<div class="modal-header">
+    <h3 class="modal-title">{{title}}</h3>
+</div>
+<div class="modal-body">
+    <div class="snippet">
+        {{snippet}}
+    </div>  
+    <div class="attribution">
+        <p>By</p>
+        <ul>
+            <li ng-repeat="contributor in attribution">
+                {{contributor}}
+            </li>
+        </ul>
+    </div>
+    <div class="article-link">
+        <a ng-href="{{link}}" target="_blank">Go to {{type}}</a>
+    </div>
+    <div class="keywords">
+        <ul>
+            <li ng-repeat="term in keywords">
+                {{term}}
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="ok()">Email</button>
+</div>

@@ -1,9 +1,9 @@
 angular.module('ONDApp')
     .controller('SearchCtrl', ['$scope', '$location', 'datum', 
-    'guardianArticlesFullDisplay', 'nyTimesArticlesFullDisplay', 
+    'guardianArticlesFullDisplay', 'nyTimesArticlesFullDisplay', 'guardianArticleDetails',
     'nytimesArticleDetails', 'nytimesArticleMetadata', '$q', '$uibModal', 
-    function($scope, $location, datum, guardianArticlesFullDisplay, nyTimesArticlesFullDisplay, 
-    nytimesArticleDetails, nytimesArticleMetadata, $q, $uibModal)
+    function($scope, $location, datum, guardianArticlesFullDisplay, nyTimesArticlesFullDisplay,
+    guardianArticleDetails, nytimesArticleDetails, nytimesArticleMetadata, $q, $uibModal)
     {
         $scope.day = datum.day;
         var monthNum = datum.month;
@@ -59,11 +59,11 @@ angular.module('ONDApp')
         };
         
         $scope.guardianArticle = function(result){
-            // guardianArticleDetails(result);
-            // $uibModel.open({
-            //     templateUrl: './app/article-display/templates/guardian-article-display-template.html',
-            //     controller: 'GuardianModalCtrl'
-            // });
+            guardianArticleDetails(result);
+            $uibModal.open({
+                templateUrl: './app/article-display/templates/guardian-article-display-template.html',
+                controller: 'GuardianModalCtrl'
+            });
         };
         
         $scope.nytimesArticle = function(result){

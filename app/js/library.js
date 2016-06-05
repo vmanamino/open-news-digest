@@ -21,22 +21,24 @@ angular.module('library', [])
         };
         return article;
     })
-    // .service('guardianArticleMetadata', function(){
-    //     var article = {
-    //         contributors: [],
-    //         headline: '',
-    //         keywords: [],
-    //         section: '',
-    //         link: '',
-    //         type: ''
-    //     }
-        
-    // })
+    .service('guardianArticleMetadata', function(){
+        var article = {
+            contributors: [],
+            headline: '',
+            keywords: [],
+            section: '',
+            link: '',
+            type: ''
+        };
+        return article;
+    })
     // .service('guardianKeywords', function(){
     //     var guardianKeywords = new Array();
+    //     return guardianKeywords;
     // })
     // .service('guardianContributors', function(){
     //     var guardianContributors = new Array();
+    //     return guardianContributors;
     // })
     .service('nytimesKeywords', function(){
         var keys = new Array();
@@ -51,6 +53,8 @@ angular.module('library', [])
     // function(guardianKeywords, guardianContributors){
     //     // var keys = new Array();
     //     return function(tags){
+    //         guardianKeywords = [];
+    //         guardianContributors = [];
     //         for (var i = 0; i < tags.length; i++){
     //             if (tags[i].type == "keyword"){
     //                 guardianKeywords.push(tags[i].webTitle); 
@@ -59,12 +63,24 @@ angular.module('library', [])
     //                 guardianContributors.push(tags[i].webTitle);
     //             }
     //         }
-            
     //     };
     // }])
+    .service('guardianKeywords', function(){
+        return function(tags){
+            var keys = new Array();
+            keys = [];
+            for (var i = 0; i < tags.length; i++){
+                if (tags[i].type == "keyword"){
+                    keys.push(tags[i].webTitle); 
+                }
+            }
+            return keys;
+        };
+    })
     .service('guardianContributors', function(){
-        var contrs = new Array();
         return function(contributors){
+            var contrs = new Array();
+            contrs = [];
             for (var i = 0; i < contributors.length; i++){
                 if (contributors[i].type == "contributor"){
                     contrs.push(contributors[i].webTitle);
@@ -119,16 +135,18 @@ angular.module('library', [])
             nytimesArticleMetadata.type = result.document_type;
         };    
     }])
-    // .factory('guardianArticleDetails', ['guardianArticleMetadata', 'guardianTags', 'guardianKeywords', 'guardianContributors',
-    // function(guardianArticleMetadata, guardianTags, guardianKeywords, guardianContributors){
-    //     return function(result){
-    //         guardianTags(result);
-    //         guardianArticleMetadata.contributors = guardianContributors;
-    //         guardianArticleMetadata.headline = result.webTitle;
-    //         guardianArticleMetadata.keywords = guardianKeywords;
-    //         guardianArticleMetadata.section = result.sectionName;
-    //         guardianArticleMetadata.link = result.webUrl;
-    //         guardianArticleMetadata.type = result.type;
-    //     }; 
-    // }]);
+    .factory('guardianArticleDetails', ['guardianArticleMetadata',
+    'guardianKeywords', 'guardianContributors',
+    function(guardianArticleMetadata, guardianKeywords, guardianContributors){
+        return function(result){
+            // guardianTags(result.tags);
+            guardianArticleMetadata.contributors = guardianContributors(result.tags);
+            guardianArticleMetadata.headline = result.webTitle;
+            guardianArticleMetadata.keywords = guardianKeywords;
+            guardianArticleMetadata.keywords = guardianKeywords(result.tags);
+            // guardianArticleMetadata.section = result.sectionName;
+            guardianArticleMetadata.link = result.webUrl;
+            guardianArticleMetadata.type = result.type;
+        }; 
+    }]);
     
