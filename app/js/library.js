@@ -41,8 +41,8 @@ angular.module('library', [])
     //     return guardianContributors;
     // })
     .service('nytimesKeywords', function(){
-        var keys = new Array();
         return function(keywords){
+            var keys = [];
             for (var i =  0; i < keywords.length; i++){
                 keys.push(keywords[i].value);
             }  
@@ -67,8 +67,8 @@ angular.module('library', [])
     // }])
     .service('guardianKeywords', function(){
         return function(tags){
-            var keys = new Array();
-            keys = [];
+            // var keys = new Array();
+            var keys = [];
             for (var i = 0; i < tags.length; i++){
                 if (tags[i].type == "keyword"){
                     keys.push(tags[i].webTitle); 
@@ -79,8 +79,8 @@ angular.module('library', [])
     })
     .service('guardianContributors', function(){
         return function(contributors){
-            var contrs = new Array();
-            contrs = [];
+            // var contrs = new Array();
+            var contrs = [];
             for (var i = 0; i < contributors.length; i++){
                 if (contributors[i].type == "contributor"){
                     contrs.push(contributors[i].webTitle);
