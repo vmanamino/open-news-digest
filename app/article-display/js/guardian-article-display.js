@@ -1,6 +1,8 @@
 angular.module('ONDApp')
-    .controller('GuardianModalCtrl', ['$scope', 'guardianArticleMetadata',
-    function($scope, guardianArticleMetadata){
+    .controller('GuardianModalCtrl', ['$scope', 'guardianArticleMetadata', '$uibModalInstance',
+    function($scope, guardianArticleMetadata, $uibModalInstance){
+        $scope.send_email = true;
+        $scope.email_option = false;
         $scope.title = guardianArticleMetadata.headline;
         $scope.link = guardianArticleMetadata.link;
         $scope.type = guardianArticleMetadata.type;
@@ -9,4 +11,15 @@ angular.module('ONDApp')
         console.log('guardian metadata');
         console.log(guardianArticleMetadata);
         console.log($scope.attribution);
+        
+        $scope.email = function(article){
+            console.log(article);
+            $scope.email_option = true;
+        };
+        
+        $scope.send_email = function(email_address){
+            console.log(email_address);
+            $scope.email_option = false;
+            $uibModalInstance.close();
+        };
     }]);

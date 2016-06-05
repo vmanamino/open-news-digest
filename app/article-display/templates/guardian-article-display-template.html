@@ -26,5 +26,10 @@
     </div>
 </div>
 <div class="modal-footer">
-    <button class="btn btn-primary" type="button" ng-click="ok()">Email</button>
+    <button class="btn btn-primary" type="button" ng-click="email(title)" ng-hide="email_option">Email</button>
+</div>
+<div class="modal-footer" ng-show="email_option">
+    <p>Provide email address</p>
+    <input id="address" ng-model="email_address">
+    <button class="btn btn-primary" type="button" ng-click="send_email(email_address)">Send</button>
 </div>
