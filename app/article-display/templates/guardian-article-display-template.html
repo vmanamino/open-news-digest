@@ -8,8 +8,8 @@
     <div class="attribution">
         <p>By</p>
         <ul>
-            <li ng-repeat="contributor in attribution">
-                {{contributor}}
+            <li ng-repeat="contributor in attribution track by $index">
+                <a ng-href="{{contributor.url}}" target="_blank">{{contributor.title}}</a>
             </li>
         </ul>
     </div>
@@ -19,8 +19,8 @@
     <div class="keywords">
         <p>See also</p>
         <ul>
-            <li ng-repeat="term in keywords">
-                {{term}}
+            <li ng-repeat="term in keywords track by $index">
+                <a ng-href="{{term.url}}" target="_blank">{{term.title}}</a>
             </li>
         </ul>
     </div>

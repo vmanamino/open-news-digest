@@ -32,6 +32,13 @@ angular.module('library', [])
         };
         return article;
     })
+    .service('guardianObject', function(){
+        var object = {
+            title: '',
+            url: ''
+        };
+        return object;
+    })
     // .service('guardianKeywords', function(){
     //     var guardianKeywords = new Array();
     //     return guardianKeywords;
@@ -42,7 +49,7 @@ angular.module('library', [])
     // })
     .service('nytimesKeywords', function(){
         return function(keywords){
-            var keys = [];
+            var keys = new Array();
             for (var i =  0; i < keywords.length; i++){
                 keys.push(keywords[i].value);
             }  
@@ -65,25 +72,36 @@ angular.module('library', [])
     //         }
     //     };
     // }])
-    .service('guardianKeywords', function(){
+    .service('guardianKeywords', [function(){
         return function(tags){
-            // var keys = new Array();
-            var keys = [];
+            var keys = new Array();
             for (var i = 0; i < tags.length; i++){
                 if (tags[i].type == "keyword"){
-                    keys.push(tags[i].webTitle); 
+                    var obj = {
+                        title: '',
+                        url: ''
+                    }
+                    obj.title = tags[i].webTitle;
+                    obj.url = tags[i].webUrl;
+                    // keys.push(tags[i].webTitle);
+                    keys.push(obj); 
                 }
             }
             return keys;
         };
-    })
+    }])
     .service('guardianContributors', function(){
         return function(contributors){
-            // var contrs = new Array();
-            var contrs = [];
+            var contrs = new Array();
             for (var i = 0; i < contributors.length; i++){
                 if (contributors[i].type == "contributor"){
-                    contrs.push(contributors[i].webTitle);
+                    var obj = {
+                        title: '',
+                        url: ''
+                    }
+                    obj.title = contributors[i].webTitle;
+                    obj.url = contributors[i].webUrl;
+                    contrs.push(obj);
                 }
             }
             return contrs;
