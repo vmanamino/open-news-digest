@@ -142,7 +142,7 @@ angular.module('library', [])
                     title: title,
                     link:  link,
                     kind: type,
-                    email: email
+                    address: email
                 }
             });
         };
