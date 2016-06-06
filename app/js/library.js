@@ -132,6 +132,11 @@ angular.module('library', [])
             });
         };    
     }])
+    .service('sendEmail', ['$http', function($http){
+        return function(title, link, type, email){
+            console.log(title, link, type, email);  
+        };
+    }])
     .factory('dateParams', ['datum', function(datum){
         return function(day){
             datum.year = day.year;

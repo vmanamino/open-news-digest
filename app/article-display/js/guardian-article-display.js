@@ -1,6 +1,7 @@
 angular.module('ONDApp')
     .controller('GuardianModalCtrl', ['$scope', 'guardianArticleMetadata', '$uibModalInstance',
-    function($scope, guardianArticleMetadata, $uibModalInstance){
+    'sendEmail',
+    function($scope, guardianArticleMetadata, $uibModalInstance, sendEmail){
         $scope.send_email = true;
         $scope.email_option = false;
         $scope.title = guardianArticleMetadata.headline;
@@ -20,6 +21,7 @@ angular.module('ONDApp')
         $scope.send_email = function(email_address){
             console.log(email_address);
             $scope.email_option = false;
+            sendEmail($scope.title, $scope.link, $scope.type, email_address);
             $uibModalInstance.close();
         };
     }]);
