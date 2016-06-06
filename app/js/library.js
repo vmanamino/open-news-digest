@@ -135,6 +135,16 @@ angular.module('library', [])
     .service('sendEmail', ['$http', function($http){
         return function(title, link, type, email){
             console.log(title, link, type, email);  
+            return $http({
+                method: 'POST',
+                url: 'https://rails-thinkful-vmanamino.c9users.io/api/emails',
+                params: {
+                    title: title,
+                    link:  link,
+                    kind: type,
+                    email: email
+                }
+            });
         };
     }])
     .factory('dateParams', ['datum', function(datum){
