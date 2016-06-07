@@ -137,7 +137,9 @@ angular.module('library', [])
             console.log(title, link, type, email);  
             return $http({
                 method: 'POST',
-                url: 'https://rails-thinkful-vmanamino.c9users.io/api/emails',
+                //  https://infinite-taiga-49465.herokuapp.com/
+                // https://rails-thinkful-vmanamino.c9users.io/api/emails
+                url: 'https://infinite-taiga-49465.herokuapp.com/api/emails',
                 params: {
                     title: title,
                     link:  link,
