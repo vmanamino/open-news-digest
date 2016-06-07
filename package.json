@@ -1,0 +1,29 @@
+{
+  "name": "open-news-digest",
+  "version": "1.0.0",
+  "description": "news via api calls",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vmanamino/open-news-digest.git"
+  },
+  "keywords": [
+    "news",
+    "api",
+    "nytimes",
+    "guardian"
+  ],
+  "author": "Viral and Victor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vmanamino/open-news-digest/issues"
+  },
+  "homepage": "https://github.com/vmanamino/open-news-digest#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^4.0.0"
+  }
+}
