@@ -1,4 +1,5 @@
-angular.module('ONDApp')
+// ondangular.module('ONDApp')
+ond
     .directive('calendarDisplay', function(){
         return {
             restrict: 'E',

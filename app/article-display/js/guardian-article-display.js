@@ -1,4 +1,5 @@
-angular.module('ONDApp')
+// angular.module('ONDApp')
+ond
     .controller('GuardianModalCtrl', ['$scope', 'guardianArticleMetadata', '$uibModalInstance',
     'sendEmail',
     function($scope, guardianArticleMetadata, $uibModalInstance, sendEmail){

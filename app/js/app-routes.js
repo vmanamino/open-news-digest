@@ -1,4 +1,5 @@
-angular.module('ONDApp')
+// angular.module('ONDApp')
+ond
     .config(['$locationProvider', '$routeProvider',
     function($locationProvider, $routeProvider){
         $locationProvider.hashPrefix('!');

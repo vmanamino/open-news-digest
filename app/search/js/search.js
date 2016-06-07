@@ -1,4 +1,5 @@
-angular.module('ONDApp')
+// angular.module('ONDApp')
+ond
     .controller('SearchCtrl', ['$scope', '$location', 'datum', 
     'guardianArticlesFullDisplay', 'nyTimesArticlesFullDisplay', 'guardianArticleDetails',
     'nytimesArticleDetails', 'nytimesArticleMetadata', '$q', '$uibModal', 

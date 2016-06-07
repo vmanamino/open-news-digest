@@ -1,4 +1,5 @@
-angular.module('ONDApp')
+// angular.module('ONDApp')
+ond
     .controller('NYTimesModalCtrl', ['$scope', 'nytimesArticleMetadata', '$uibModalInstance',
     'sendEmail',
     function($scope, nytimesArticleMetadata, $uibModalInstance, sendEmail){
