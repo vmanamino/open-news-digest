@@ -1,5 +1,4 @@
-// angular.module('ONDApp')
-ond
+angular.module('ONDApp')
     .directive('calendarHeading', function(){
         return {
             restrict: 'E',

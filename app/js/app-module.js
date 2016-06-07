@@ -1,1 +1,1 @@
-var ond = angular.module('ONDApp', ['library', 'ngRoute', 'ui.bootstrap']);
+angular.module('ONDApp', ['library', 'ngRoute', 'ui.bootstrap']);
