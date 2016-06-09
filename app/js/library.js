@@ -9,6 +9,7 @@ angular.module('library', [])
     })
     .service('nytimesArticleMetadata', function(){
         var article = {
+            attribution: 'Data provided by The New York Times',
             byline: '',
             headline: '', // print headline
             keywords: [],

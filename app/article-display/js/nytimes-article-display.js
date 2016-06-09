@@ -5,7 +5,8 @@ angular.module('ONDApp')
         $scope.email_option = false;
         $scope.title = nytimesArticleMetadata.headline;
         $scope.snippet = nytimesArticleMetadata.snippet;
-        $scope.attribution = nytimesArticleMetadata.byline;
+        $scope.contributors = nytimesArticleMetadata.byline;
+        $scope.attribution = nytimesArticleMetadata.attribution;
         $scope.keywords = new Array();
         $scope.keywords = nytimesArticleMetadata.keywords;
         $scope.link = nytimesArticleMetadata.link;
@@ -18,7 +19,9 @@ angular.module('ONDApp')
         
         $scope.send_email = function(email_address){
             $scope.email_option = false;
-            sendEmail($scope.title, $scope.link, $scope.type, email_address);
+            var subject = $scope.title;
+            var title = $scope.snippet;
+            sendEmail(title, $scope.link, $scope.type, email_address, subject, $scope.attribution);
             $uibModalInstance.close();
             
         };
