@@ -24,6 +24,7 @@ angular.module('library', [])
     })
     .service('guardianArticleMetadata', function(){
         var article = {
+            attribution: 'Data from Guardian',
             contributors: [],
             headline: '',
             keywords: [],
@@ -134,8 +135,8 @@ angular.module('library', [])
         };    
     }])
     .service('sendEmail', ['$http', function($http){
-        return function(title, link, type, email){
-            console.log(title, link, type, email);  
+        return function(title, link, type, email, subject, attribution){
+            console.log(title, link, type, email, subject, attribution);  
             return $http({
                 method: 'POST',
                 //  https://infinite-taiga-49465.herokuapp.com/api/emails
@@ -145,7 +146,9 @@ angular.module('library', [])
                     title: title,
                     link:  link,
                     kind: type,
-                    address: email
+                    address: email,
+                    subject: subject,
+                    attribution: attribution
                 }
             });
         };

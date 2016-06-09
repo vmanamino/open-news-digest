@@ -5,10 +5,10 @@
     <div class="snippet">
         {{snippet}}
     </div>  
-    <div class="attribution">
+    <div class="contributors">
         <p>By</p>
         <ul>
-            <li ng-repeat="contributor in attribution track by $index">
+            <li ng-repeat="contributor in contributors track by $index">
                 <a ng-href="{{contributor.url}}" target="_blank">{{contributor.title}}</a>
             </li>
         </ul>
