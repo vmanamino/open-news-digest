@@ -141,7 +141,7 @@ angular.module('library', [])
                 method: 'POST',
                 //  https://infinite-taiga-49465.herokuapp.com/api/emails
                 // https://rails-thinkful-vmanamino.c9users.io/api/emails
-                url: 'https://rails-thinkful-vmanamino.c9users.io/api/emails',
+                url: 'https://infinite-taiga-49465.herokuapp.com/api/emails',
                 params: {
                     title: title,
                     link:  link,
