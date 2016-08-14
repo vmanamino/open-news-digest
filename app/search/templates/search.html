@@ -23,7 +23,7 @@
             </li>
         </ul>
     </div>
-    <div class="nytimes-results">
+    <div class="nytimes-results" ng-if="nytimesResults">
         <h1>NY Times</h1><img src="app/images/poweredby_nytimes_30b.png">
         <ul ng-if="(term == query)">
             <li ng-repeat="result in nytimesResults">
