@@ -15,7 +15,7 @@
     </div>
 </div>
 <div class="results">
-    <div class="guardian-results">
+    <div class="guardian-results" ng-if="guardianResults">
         <h1>Guardian</h1>
         <ul ng-if="(term == query)">
             <li ng-repeat="result in guardianResults">
