@@ -80,3 +80,10 @@
 .clear-both {
     clear: both;
 }
+
+.intro {
+    text-align: center;
+    font-size: large;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
