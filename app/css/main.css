@@ -54,6 +54,11 @@
     background-color: #e4e4e4;
 }
 
+.results {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
 /*.results {*/
 /*    font-size: 28px;*/
 /*    width:100%;*/
@@ -67,14 +72,14 @@
     /*display:inline-block;*/
     /*width:50%;*/
     float: left;
-    margin-left: 400px;
+    /*margin-left: 400px;*/
 }
 
 .nytimes-results {
     /*display:inline-block;*/
     /*width:50%;*/
     float: right;
-    margin-right: 400px;
+    /*margin-right: 400px;*/
 }
 
 .clear-both {
