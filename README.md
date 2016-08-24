@@ -9,7 +9,16 @@ service.
 The user is presented with a calendar to select a day which is of news 
 interest
 
-[![open-news-digest.png](https://s15.postimg.org/95v35ev57/open_news_digest.png)](https://postimg.org/image/5z0jlsap3/)
+[![calendar app.png](https://s15.postimg.org/vsayveumz/calendar_app.png)](https://postimg.org/image/j0wsowkuv/)
+
+This, then, takes the user to a news search for the day selected:
+
+[![search query.png](https://s4.postimg.org/ufdq7bpt9/search_query.png)](https://postimg.org/image/9ihi2nrs9/)
+
+The results of the search entered by the user are laid out to view
+
+[![results.png](https://s4.postimg.org/dibthlvwd/results.png)](https://postimg.org/image/yrzfsgc6x/)
+
 
 instructions:
 
