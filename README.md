@@ -82,4 +82,33 @@ To install gulp-connect [as a dependency]:
 	
 run gulp connect within the project directory
 
+**Rails API email service**:
+
+Here is the link to the repo for the API:
+
+https://github.com/vmanamino/email-handler-api
+
+You can fork it and then push it to Heroku for free (after setting up an account)
+
+
+Once the API is available, change the link in the AngularJS app
+in open-news-digest/app/js/library.js:
+
+	 .service('sendEmail', ['$http', function($http){
+	        return function(title, link, type, email, subject, attribution){
+	            console.log(title, link, type, email, subject, attribution);  
+	            return $http({
+	                method: 'POST',
+	                **url: 'https://infinite-taiga-49465.herokuapp.com/api/emails',**
+	                params: {
+	                    title: title,
+	                    link:  link,
+	                    kind: type,
+	                    address: email,
+	                    subject: subject,
+	                    attribution: attribution
+	                }
+	            });
+	        };
+	    }])
 
