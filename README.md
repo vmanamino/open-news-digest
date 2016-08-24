@@ -6,6 +6,11 @@ to create a curated news content site for discovery and research.
 It comprises an AngularJS app for news retrieval, and a Rails API for the email
 service.
 
+The user is presented with a calendar to select a day which is of news 
+interest
+
+[open-news-digest.png](https://postimg.org/image/5z0jlsap3/)
+
 instructions:
 
 cd into the root directory of the project
