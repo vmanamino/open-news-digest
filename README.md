@@ -19,7 +19,27 @@ The results of the search entered by the user are laid out to view
 
 [![results.png](https://s4.postimg.org/dibthlvwd/results.png)](https://postimg.org/image/yrzfsgc6x/)
 
+Each result opens into a pop up providing
+..* article details
+..* links to the article
+..* links to related news content
+..* and the option to email the article
 
+[![modal.png](https://s4.postimg.org/olc5ja5bx/modal.png)](https://postimg.org/image/781v4fa0p/)
+
+When you click the email button, you enter the email address of the person you 
+want to read the article.  That person then receives an email with a direct
+link to the article:
+
+[![email.png](https://s15.postimg.org/fhypbap3f/email.png)](https://postimg.org/image/57wac1z7r/)
+
+Inbox:
+
+[![inbox.png](https://s14.postimg.org/fotkx2te9/inbox.png)](https://postimg.org/image/g1kz39bnx/)
+
+Email body:
+
+[![emailbody.png](https://s3.postimg.org/p8gnojqdv/emailbody.png)](https://postimg.org/image/thldqptn3/)
 instructions:
 
 cd into the root directory of the project
