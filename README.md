@@ -29,9 +29,11 @@ Each result opens into a pop up providing
 
 When you click the email button, you enter the email address of the person you 
 want to read the article.  That person then receives an email with a direct
-link to the article:
+link to the article.
 
-[![email.png](https://s15.postimg.org/fhypbap3f/email.png)](https://postimg.org/image/57wac1z7r/)
+**_Enter email_**:
+
+[![email.png](https://s10.postimg.org/t2pt11wc9/email.png)](https://postimg.org/image/3jxgo1cs5/)
 
 ____
 
