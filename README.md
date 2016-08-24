@@ -1,8 +1,10 @@
-# Capstone Angular project
+# Capstone Angular Project
 
-Uses the NY Times, Guardian, and Die Zeit APIs to create a curated news content site
-for discovery and research.  Eventually, an additional API will be developed to send emails
-and track clicks.
+This is news retrieval and email service using the NY Times and Guardian APIs
+to create a curated news content site for discovery and research.
+
+It comprises an AngularJS app for news retrieval, and a Rails API for the email
+service.
 
 instructions:
 
