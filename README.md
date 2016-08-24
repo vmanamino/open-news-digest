@@ -9,7 +9,7 @@ service.
 The user is presented with a calendar to select a day which is of news 
 interest
 
-[open-news-digest.png](https://postimg.org/image/5z0jlsap3/)
+![alt-text](https://postimg.org/image/5z0jlsap3/ "Calendar interface")
 
 instructions:
 
