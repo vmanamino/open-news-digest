@@ -35,39 +35,49 @@ link to the article:
 
 ____
 
-Inbox:
+**_Inbox_**:
 
 [![inbox.png](https://s14.postimg.org/fotkx2te9/inbox.png)](https://postimg.org/image/g1kz39bnx/)
 
 ____
 
-Email body:
+**_Email body_**:
 
 [![emailbody.png](https://s3.postimg.org/p8gnojqdv/emailbody.png)](https://postimg.org/image/thldqptn3/)
 
 ____
-instructions:
+
+
+**Instructions to install the AngularJS app**:
 
 cd into the root directory of the project
 
 install node v4.4.5 or higher
 
 install bower globally: 
+
     npm install -g bower 
     
-install dependencies specified in bower: 
+install dependencies specified in bower:
+
     bower install
     
 Gulp commands are included to connect to a server locally within your dev environment.  
 
 To Install Gulp:
+
 	install globally like so: 
+	
 	    npm install -g gulp
+	    
 	install gulp as a dependency of the app: 
+	
 	    npm install --save-dev gulp
 
 To install gulp-connect [as a dependency]:
+
 	npm install --save-dev gulp 
+	
 	run gulp connect within the project directory
 
 
