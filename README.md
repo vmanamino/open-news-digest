@@ -64,13 +64,13 @@ install dependencies specified in bower:
     
 Gulp commands are included to connect to a server locally within your dev environment.  
 
-To Install Gulp:
+To Install Gulp
 
-	install globally like so: 
+	..1. install globally like so: 
 	
 	    npm install -g gulp
 	    
-	install gulp as a dependency of the app: 
+	..2. install gulp as a dependency of the app: 
 	
 	    npm install --save-dev gulp
 
@@ -78,6 +78,6 @@ To install gulp-connect [as a dependency]:
 
 	npm install --save-dev gulp 
 	
-	run gulp connect within the project directory
+run gulp connect within the project directory
 
 
