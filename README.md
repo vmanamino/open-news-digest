@@ -33,13 +33,19 @@ link to the article:
 
 [![email.png](https://s15.postimg.org/fhypbap3f/email.png)](https://postimg.org/image/57wac1z7r/)
 
+____
+
 Inbox:
 
 [![inbox.png](https://s14.postimg.org/fotkx2te9/inbox.png)](https://postimg.org/image/g1kz39bnx/)
 
+____
+
 Email body:
 
 [![emailbody.png](https://s3.postimg.org/p8gnojqdv/emailbody.png)](https://postimg.org/image/thldqptn3/)
+
+____
 instructions:
 
 cd into the root directory of the project
